@@ -1,0 +1,3 @@
+.snakemake/
+*.txt
+*.svg

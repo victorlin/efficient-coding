@@ -1,0 +1,11 @@
+rule all:
+    input:
+        files=expand("job{sample}.txt", sample=[1, 2, 3, 4])
+    shell:
+        "cat {input.files} > all.txt"
+
+rule job:
+    output:
+        "job{sample}.txt"
+    shell:
+        "sleep 1; echo '{wildcards.sample}' > job{wildcards.sample}.txt"
